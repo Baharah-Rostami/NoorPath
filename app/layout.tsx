@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@/components/providers/theme-provider";
 import "./globals.css";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 
@@ -7,11 +8,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <DashboardLayout>
-          {children}
-        </DashboardLayout>
+        <ThemeProvider>
+          <DashboardLayout>
+            {children}
+          </DashboardLayout>
+        </ThemeProvider>
+
       </body>
     </html>
   );

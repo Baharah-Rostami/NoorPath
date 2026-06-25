@@ -1,6 +1,7 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { Bell, Search, Menu } from "lucide-react";
+import { Search, Menu } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
 type TopbarProps = {
   setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
@@ -9,29 +10,29 @@ export default function Topbar({
 }: TopbarProps) {
   const pathname = usePathname();
 
-const pageTitles: Record<string, string> = {
-  "/": "Dashboard",
-  "/about": "About",
-  "/opportunities": "Opportunities",
-  "/applications": "Applications",
-  "/contact": "Contact",
-};
+  const pageTitles: Record<string, string> = {
+    "/": "Dashboard",
+    "/about": "About",
+    "/opportunities": "Opportunities",
+    "/applications": "Applications",
+    "/contact": "Contact",
+  };
 
-const title = pageTitles[pathname] || "NoorPath";
+  const title = pageTitles[pathname] || "NoorPath";
 
   return (
-    <header className="h-20 bg-white border-b flex items-center justify-between px-6 text-[#6da48a]">
-      {/* Left */}
+    <header className="h-20 bg-white border-b flex items-center justify-between px-6 text-[#6da48a] dark:bg-[#2B5748] dark:text-[#eae6e6]">
+  
       <div className="flex items-center gap-4">
         <button
-  onClick={() => setSidebarOpen(true)}
-  className="md:hidden"
->
-  <Menu size={24} />
-</button>
+          onClick={() => setSidebarOpen(true)}
+          className="md:hidden"
+        >
+          <Menu size={24} />
+        </button>
 
         <h2 className="text-2xl font-bold">
-         {title}
+          {title}
         </h2>
       </div>
 
@@ -41,20 +42,14 @@ const title = pageTitles[pathname] || "NoorPath";
         <input
           type="text"
           placeholder="Search jobs..."
-          className="bg-transparent outline-none px-3 w-full"
+          className="bg-transparent outline-none px-3 w-full dark:placeholder:text-[#414141]"
         />
       </div>
 
-      
+
       <div className="flex items-center gap-5">
-        <button className="relative">
-          <Bell />
-
-          <span className="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-purple-600 text-white text-xs flex items-center justify-center">
-            2
-          </span>
-        </button>
-
+       <ThemeToggle/>
+       
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-gray-300"></div>
 
