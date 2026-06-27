@@ -12,7 +12,7 @@ export default function DashboardLayout({
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <div className="flex h-screen bg-gray-100">
+    <div className="flex min-h-screen bg-gray-100 dark:bg-zinc-950">
       <Sidebar
         sidebarOpen={sidebarOpen}
         setSidebarOpen={setSidebarOpen}
@@ -21,7 +21,7 @@ export default function DashboardLayout({
       <div className="flex flex-1 flex-col">
         <Topbar setSidebarOpen={setSidebarOpen} />
         
-        <main className="flex-1 p-6">
+        <main className="flex-1 overflow-y-auto bg-gray-100 p-6 dark:bg-zinc-950">
           {children}
         </main>
        

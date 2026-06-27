@@ -21,7 +21,7 @@ export default function Topbar({
   const title = pageTitles[pathname] || "NoorPath";
 
   return (
-    <header className="h-20 bg-white border-b flex items-center justify-between px-6 text-[#6da48a] dark:bg-[#2B5748] dark:text-[#eae6e6]">
+    <header className="h-20 bg-white border-b flex items-center justify-between px-6 text-[#6da48a] dark:bg-[#1A3636] dark:text-[#eae6e6]">
   
       <div className="flex items-center gap-4">
         <button

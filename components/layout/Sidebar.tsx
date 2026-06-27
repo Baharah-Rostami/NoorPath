@@ -59,7 +59,7 @@ export default function Sidebar({
       )}
 
       <aside
-        className={`fixed left-0 top-0 z-50 flex h-screen w-64 flex-col bg-[#659287] text-white transition-transform duration-300 md:static md:translate-x-0 dark:bg-[#212121] dark:text-[#eae6e6] ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        className={`fixed left-0 top-0 z-50 flex h-screen w-64 flex-col overflow-y-auto bg-[#659287] text-white transition-transform duration-300 md:sticky md:top-0 md:translate-x-0 dark:bg-[#2B5748] dark:text-[#eae6e6] ${sidebarOpen ? "translate-x-0" : "-translate-x-full"
           }`}
       >
         <button
@@ -87,11 +87,11 @@ export default function Sidebar({
                 href={item.href}
                 onClick={() => setSidebarOpen(false)}
                 className={`flex items-center gap-3 px-4 py-3 rounded-2xl transition-all ${active
-                    ? "bg-white text-[#659e83] shadow-md"
-                    : "hover:bg-white/10"
+                  ? "bg-white text-[#659e83] shadow-md"
+                  : "hover:bg-white/10"
                   }`}
               >
-                <Icon size={20} className="dark:text-[#156c4f]"/>
+                <Icon size={20} />
                 <span>{item.name}</span>
               </Link>
             );
