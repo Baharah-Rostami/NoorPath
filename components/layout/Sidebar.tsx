@@ -6,9 +6,9 @@ import {
   LayoutDashboard,
   User,
   Briefcase,
-  FileText,
   Mail,
   Settings,
+  Bookmark,
 } from "lucide-react";
 
 const menuItems = [
@@ -28,9 +28,9 @@ const menuItems = [
     icon: Briefcase,
   },
   {
-    name: "Applications",
-    href: "/applications",
-    icon: FileText,
+    name: "Saved",
+    href: "/saved",
+    icon: Bookmark,
   },
   {
     name: "Contact",
