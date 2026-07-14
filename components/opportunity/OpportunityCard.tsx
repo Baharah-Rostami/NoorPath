@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import type { Opportunity } from "@/data/opportunities";
+import useSavedOpportunities from "@/hooks/useSavedOpportunities";
 import {
   Bookmark,
+  BookmarkCheck,
   Building2,
   MapPin,
   DollarSign,
@@ -20,6 +22,9 @@ interface OpportunityCardProps {
 export default function OpportunityCard({
   opportunity,
 }: OpportunityCardProps) {
+  const { savedIds, handleToggle } = useSavedOpportunities();
+
+  const saved = savedIds.includes(opportunity.id);
   return (
     <div
       className="group rounded-2xl border border-gray-200  bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#659287] hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900
@@ -30,7 +35,7 @@ export default function OpportunityCard({
 
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100  text-emerald-700 dark:bg-emerald-900/30
           ">
-            <Building2 size={24}/>
+            <Building2 size={24} />
           </div>
           <div>
 
@@ -45,12 +50,21 @@ export default function OpportunityCard({
           </div>
         </div>
 
-        <button className=" rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-zinc-800"
+        <button
+          onClick={() => handleToggle(opportunity.id)}
+          className="rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-zinc-800"
         >
-          <Bookmark
-            size={18}
-            className="text-gray-500 hover:text-[#659287]"
-          />
+          {saved ? (
+            <BookmarkCheck
+              size={18}
+              className="text-[#659287]"
+            />
+          ) : (
+            <Bookmark
+              size={18}
+              className="text-gray-500 hover:text-[#659287]"
+            />
+          )}
         </button>
       </div>
 
@@ -62,7 +76,7 @@ export default function OpportunityCard({
           <span
             className="flex items-center gap-1 rounded-full bg-yellow-100 px-2.5 py-1 text-xs font-semibold text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300
             ">
-            <Star size={13}/>
+            <Star size={13} />
             Featured
           </span>
         )}
@@ -90,25 +104,25 @@ export default function OpportunityCard({
       ">
 
         <div className="flex items-center gap-2">
-          <MapPin size={15}/>
+          <MapPin size={15} />
           {opportunity.location}
         </div>
 
 
         <div className="flex items-center gap-2">
-          <Briefcase size={15}/>
+          <Briefcase size={15} />
           {opportunity.type}
         </div>
 
 
         <div className="flex items-center gap-2">
-          <DollarSign size={15}/>
+          <DollarSign size={15} />
           {opportunity.salary}
         </div>
 
 
         <div className="flex items-center gap-2">
-          <Clock3 size={15}/>
+          <Clock3 size={15} />
           {opportunity.postedAt}
         </div>
 
@@ -125,7 +139,7 @@ export default function OpportunityCard({
 
       <div className="mt-4 flex flex-wrap gap-2">
 
-        {opportunity.skills.slice(0,3).map((skill)=>(
+        {opportunity.skills.slice(0, 3).map((skill) => (
           <span
             key={skill}
             className="rounded-full bg-gray-100 px-2.5 py-1 text-xs dark:bg-zinc-800 dark:text-gray-300
@@ -145,9 +159,15 @@ export default function OpportunityCard({
       ">
 
         <button
-          className="rounded-lg border border-[#659287] px-4 py-2 text-sm font-semibold text-[#659287] transition hover:bg-[#659287] hover:text-white
-          ">
-          Save
+          onClick={() => handleToggle(opportunity.id)}
+          className={`rounded-lg px-4 py-2 text-sm font-semibold transition
+        ${saved
+              ? "bg-[#659287] text-white"
+              : "border border-[#659287] text-[#659287] hover:bg-[#659287] hover:text-white"
+            }
+    `}
+        >
+          {saved ? "Saved" : "Save"}
         </button>
 
 
@@ -156,7 +176,7 @@ export default function OpportunityCard({
           className="flex items-center gap-2 rounded-lg bg-[#659287] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#52766d]
           ">
           View Details
-          <ArrowRight size={15}/>
+          <ArrowRight size={15} />
         </Link>
 
       </div>
