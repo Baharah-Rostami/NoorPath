@@ -9,6 +9,7 @@ import {
   Mail,
   Settings,
   Bookmark,
+  CopyIcon,
 } from "lucide-react";
 
 const menuItems = [
@@ -26,6 +27,11 @@ const menuItems = [
     name: "Opportunities",
     href: "/opportunities",
     icon: Briefcase,
+  },
+   {
+    name: "Add Opportunity",
+    href: "/add-opportunity",
+    icon: CopyIcon,
   },
   {
     name: "Saved",
