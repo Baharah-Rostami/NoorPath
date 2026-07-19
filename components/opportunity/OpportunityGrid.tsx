@@ -1,5 +1,8 @@
+"use client";
+
 import OpportunityCard from "./OpportunityCard";
-import { Opportunity } from "@/data/opportunities";
+import type { Opportunity } from "@/data/opportunities";
+import useSavedOpportunities from "@/hooks/useSavedOpportunities";
 
 interface OpportunityGridProps {
   opportunities: Opportunity[];
@@ -10,6 +13,8 @@ export default function OpportunityGrid({
   opportunities,
   clearFilters,
 }: OpportunityGridProps) {
+  const { savedIds, handleToggle } = useSavedOpportunities();
+
   if (opportunities.length === 0) {
     return (
       <div className="mt-20 flex flex-col items-center justify-center rounded-3xl border-2 border-dashed border-gray-300 bg-white py-20 text-center dark:border-zinc-700 dark:bg-zinc-900">
@@ -37,6 +42,8 @@ export default function OpportunityGrid({
         <OpportunityCard
           key={opportunity.id}
           opportunity={opportunity}
+          saved={savedIds.includes(opportunity.id)}
+          onToggle={handleToggle}
         />
       ))}
     </div>

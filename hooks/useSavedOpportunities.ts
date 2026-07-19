@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getSavedIds,toggleSaved } from "@/lib/savedOpportunities";
+import { getSavedIds, toggleSaved } from "@/lib/savedOpportunities";
 
 export default function useSavedOpportunities() {
   const [savedIds, setSavedIds] = useState<number[]>([]);
@@ -10,10 +10,10 @@ export default function useSavedOpportunities() {
     setSavedIds(getSavedIds());
   }, []);
 
-  function handleToggle(id: number) {
+  const handleToggle = (id: number) => {
     toggleSaved(id);
     setSavedIds(getSavedIds());
-  }
+  };
 
   return {
     savedIds,

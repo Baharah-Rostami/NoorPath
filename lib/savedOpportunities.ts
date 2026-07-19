@@ -1,5 +1,3 @@
-import { Opportunity } from "@/data/opportunities";
-
 const STORAGE_KEY = "saved-opportunities";
 
 export function getSavedIds(): number[] {
@@ -27,12 +25,10 @@ export function removeOpportunity(id: number) {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(saved));
 }
 
-export function isSaved(id: number) {
-  return getSavedIds().includes(id);
-}
-
 export function toggleSaved(id: number) {
-  if (isSaved(id)) {
+  const saved = getSavedIds();
+
+  if (saved.includes(id)) {
     removeOpportunity(id);
   } else {
     saveOpportunity(id);

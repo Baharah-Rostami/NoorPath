@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { Opportunity } from "@/data/opportunities";
-import useSavedOpportunities from "@/hooks/useSavedOpportunities";
+
 import {
   Bookmark,
   BookmarkCheck,
@@ -14,17 +14,16 @@ import {
   ArrowRight,
   Star,
 } from "lucide-react";
-
 interface OpportunityCardProps {
   opportunity: Opportunity;
+  saved: boolean;
+  onToggle: (id: number) => void;
 }
-
 export default function OpportunityCard({
   opportunity,
+  saved,
+  onToggle,
 }: OpportunityCardProps) {
-  const { savedIds, handleToggle } = useSavedOpportunities();
-
-  const saved = savedIds.includes(opportunity.id);
   return (
     <div
       className="group rounded-2xl border border-gray-200  bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#659287] hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900
@@ -51,7 +50,7 @@ export default function OpportunityCard({
         </div>
 
         <button
-          onClick={() => handleToggle(opportunity.id)}
+          onClick={() => onToggle(opportunity.id)}
           className="rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-zinc-800"
         >
           {saved ? (
@@ -157,19 +156,15 @@ export default function OpportunityCard({
       border-t border-gray-100 pt-4
       dark:border-zinc-800
       ">
-
         <button
-          onClick={() => handleToggle(opportunity.id)}
-          className={`rounded-lg px-4 py-2 text-sm font-semibold transition
-        ${saved
+          onClick={() => onToggle(opportunity.id)}
+          className={`rounded-lg px-4 py-2 text-sm font-semibold transition ${saved
               ? "bg-[#659287] text-white"
               : "border border-[#659287] text-[#659287] hover:bg-[#659287] hover:text-white"
-            }
-    `}
+            }`}
         >
           {saved ? "Saved" : "Save"}
         </button>
-
 
         <Link
           href={`/opportunities/${opportunity.id}`}

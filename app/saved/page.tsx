@@ -1,38 +1,42 @@
 "use client";
 
+import OpportunityCard from "@/components/opportunity/OpportunityCard";
 import { opportunities } from "@/data/opportunities";
 import useSavedOpportunities from "@/hooks/useSavedOpportunities";
-import OpportunityCard from "@/components/opportunity/OpportunityCard";
+import { useMemo } from "react";
 
 export default function SavedPage() {
-  const { savedIds } = useSavedOpportunities();
+console.log("SavedPage rendered");
+  const { savedIds, handleToggle } = useSavedOpportunities();
 
-  const savedJobs = opportunities.filter(job =>
-    savedIds.includes(job.id)
+const savedOpportunities = useMemo(() => {
+  return opportunities.filter((item) =>
+    savedIds.includes(item.id)
   );
+}, [savedIds]);
 
-  if (savedJobs.length === 0) {
+  if (savedOpportunities.length === 0) {
     return (
-      <div className="flex h-[60vh] items-center justify-center">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold">
-            No saved opportunities
-          </h2>
+      <div className="py-20 text-center">
+        <h2 className="text-2xl font-bold">
+          No saved opportunities
+        </h2>
 
-          <p className="mt-2 text-gray-500">
-            Save jobs to view them later.
-          </p>
-        </div>
+        <p className="mt-2 text-gray-500">
+          Save an opportunity and it will appear here.
+        </p>
       </div>
     );
   }
 
   return (
     <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-      {savedJobs.map(job => (
+      {savedOpportunities.map((item) => (
         <OpportunityCard
-          key={job.id}
-          opportunity={job}
+          key={item.id}
+          opportunity={item}
+          saved={savedIds.includes(item.id)}
+          onToggle={handleToggle}
         />
       ))}
     </div>
