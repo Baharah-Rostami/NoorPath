@@ -15,12 +15,17 @@ export const experienceLevels = [
 ] as const;
 
 export const categories = [
-  "Technology",
-  "Design",
-  "Education",
-  "Finance",
-  "Healthcare",
-  "NGO",
+ "Administration",
+"Marketing",
+"Writing",
+"Human Resources",
+"Engineering",
+"Business",
+"Sales",
+"Research",
+"Language",
+"Media",
+"Logistics"
 ] as const;
 
 export const opportunitySchema = z.object({

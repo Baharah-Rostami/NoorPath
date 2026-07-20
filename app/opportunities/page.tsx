@@ -1,12 +1,14 @@
 "use client";
-
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import SearchBar from "@/components/opportunity/OpportunityFilters";
 import OpportunityGrid from "@/components/opportunity/OpportunityGrid";
-import { opportunities } from "@/data/opportunities";
+
+import type { Opportunity } from "@/data/opportunities";
+import { getOpportunities } from "@/lib/opportunitiesStorage";
 
 export default function OpportunitiesPage() {
+    const [opportunities, setOpportunities] = useState<Opportunity[]>([]);
     const [search, setSearch] = useState("");
 
     const [location, setLocation] = useState("");
@@ -18,6 +20,12 @@ export default function OpportunitiesPage() {
     const [experience, setExperience] = useState("");
 
     const [remoteOnly, setRemoteOnly] = useState(false);
+
+    useEffect(() => {
+    const data = getOpportunities();
+
+    setOpportunities(data);
+}, []);
 
     const filteredOpportunities = useMemo(() => {
         return opportunities.filter((job) => {
@@ -55,13 +63,14 @@ export default function OpportunitiesPage() {
             );
         });
     }, [
-        search,
-        location,
-        category,
-        jobType,
-        experience,
-        remoteOnly,
-    ]);
+    opportunities,
+    search,
+    location,
+    category,
+    jobType,
+    experience,
+    remoteOnly,
+]);
 
     return (
         <main className="min-h-screen bg-gray-50 p-4 dark:bg-zinc-950 md:p-8">

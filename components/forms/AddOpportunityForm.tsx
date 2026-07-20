@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { addOpportunity } from "@/lib/opportunitiesStorage";
+import { useRouter } from "next/navigation";
 import {
   opportunitySchema,
   OpportunityFormData,
@@ -12,6 +14,7 @@ import {
 } from "@/lib/validation/opportunitySchema";
 
 export default function AddOpportunityForm() {
+  const router = useRouter();
   const [submitted, setSubmitted] = useState(false);
 
   const {
@@ -35,51 +38,43 @@ export default function AddOpportunityForm() {
       skills: "",
     },
   });
+const onSubmit = async (data: OpportunityFormData) => {
+  const newOpportunity = {
+    id: Date.now(),
 
-  const onSubmit = async (data: OpportunityFormData) => {
-    const newOpportunity = {
-      id: Date.now(),
+    title: data.title,
+    company: data.company,
+    location: data.location,
+    category: data.category,
+    type: data.type,
+    experience: data.experience,
+    salary: data.salary,
+    remote: data.remote,
 
-      title: data.title,
+    postedAt: "Today",
 
-      company: data.company,
+    description: data.description,
 
-      location: data.location,
+    featured: false,
 
-      category: data.category,
-
-      type: data.type,
-
-      experience: data.experience,
-
-      salary: data.salary,
-
-      remote: data.remote,
-
-      postedAt: "Today",
-
-      description: data.description,
-
-      featured: false,
-
-      skills: data.skills
-        .split(",")
-        .map((skill) => skill.trim())
-        .filter(Boolean),
-    };
-
-    console.log("New Opportunity");
-
-    console.log(newOpportunity);
-
-    setSubmitted(true);
-
-    reset();
-
-    setTimeout(() => {
-      setSubmitted(false);
-    }, 3000);
+    skills: data.skills
+      .split(",")
+      .map((skill) => skill.trim())
+      .filter(Boolean),
   };
+
+  addOpportunity(newOpportunity);
+
+  setSubmitted(true);
+
+  reset();
+
+  setTimeout(() => {
+    setSubmitted(false);
+    router.push("/opportunities");
+    router.refresh();
+  }, 2000);
+};
 
   return (
     <div className="mx-auto max-w-5xl rounded-3xl border border-gray-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
@@ -147,7 +142,7 @@ export default function AddOpportunityForm() {
               </p>
             )}
           </div>
-                    {/* Location */}
+          {/* Location */}
 
           <div>
             <label className="mb-2 block text-sm font-semibold dark:text-white">
@@ -280,7 +275,7 @@ export default function AddOpportunityForm() {
           </div>
 
         </div>
-                {/* Description */}
+        {/* Description */}
 
         <div>
           <label className="mb-2 block text-sm font-semibold dark:text-white">
