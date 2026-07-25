@@ -22,11 +22,11 @@ export default function OpportunityDetails({
   opportunity,
 }: OpportunityDetailsProps) {
   return (
-    <div className="mx-auto max-w-7xl">
+    <div className="mx-auto max-w-6xl px-4">
       {/* Back Button */}
       <Link
         href="/opportunities"
-        className="mb-8 inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-medium transition hover:border-[#659287] hover:text-[#659287] dark:border-zinc-700 dark:bg-zinc-900 dark:text-white"
+        className="mb-6 inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-3 py-2 text-sm shadow-sm"
       >
         <ArrowLeft size={18} />
         Back to Opportunities
@@ -37,19 +37,19 @@ export default function OpportunityDetails({
         <div className="space-y-8 lg:col-span-2">
 
           {/* Hero Card */}
-          <div className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <div className="rounded-2xl border border-gray-200 bg-white p-6 shadow-md transition hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900">
 
             <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
 
               <div className="flex items-start gap-5">
 
-                <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
-                  <Building2 size={38} />
+                <div className="flex h-16 w-16 items-center justify-center rounded-3xl bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
+                  <Building2 size={30} />
                 </div>
 
                 <div>
 
-                  <h1 className="text-3xl font-bold text-gray-900 dark:text-white">
+                  <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
                     {opportunity.title}
                   </h1>
 
@@ -77,13 +77,11 @@ export default function OpportunityDetails({
                     </span>
 
                   </div>
-
                 </div>
-
               </div>
 
-              <button className="rounded-xl border border-[#659287] px-5 py-3 font-semibold text-[#659287] transition hover:bg-[#659287] hover:text-white">
-                <Bookmark size={18} className="inline mr-2" />
+              <button className="rounded-xl border border-[#659287] px-4 py-3 font-semibold text-[#659287] transition hover:bg-[#659287] hover:text-white">
+               
                 Save Job
               </button>
 
@@ -99,7 +97,7 @@ export default function OpportunityDetails({
 
             <div className="grid gap-5 sm:grid-cols-2">
 
-              <div className="flex items-center gap-4 rounded-2xl bg-gray-50 p-5 dark:bg-zinc-800">
+              <div className="flex items-center gap-4 rounded-xl bg-gray-50 p-4 transition hover:bg-gray-100 dark:bg-zinc-800">
                 <MapPin className="text-[#659287]" size={24} />
                 <div>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -111,7 +109,7 @@ export default function OpportunityDetails({
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 rounded-2xl bg-gray-50 p-5 dark:bg-zinc-800">
+              <div className="flex items-center gap-4 rounded-xl bg-gray-50 p-4 transition hover:bg-gray-100 dark:bg-zinc-800">
                 <DollarSign className="text-[#659287]" size={24} />
                 <div>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -123,7 +121,7 @@ export default function OpportunityDetails({
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 rounded-2xl bg-gray-50 p-5 dark:bg-zinc-800">
+              <div className="flex items-center gap-4 rounded-xl bg-gray-50 p-4 transition hover:bg-gray-100 dark:bg-zinc-800">
                 <Briefcase className="text-[#659287]" size={24} />
                 <div>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -135,7 +133,7 @@ export default function OpportunityDetails({
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 rounded-2xl bg-gray-50 p-5 dark:bg-zinc-800">
+              <div className="flex items-center gap-4 rounded-xl bg-gray-50 p-4 transition hover:bg-gray-100 dark:bg-zinc-800">
                 <Clock3 className="text-[#659287]" size={24} />
                 <div>
                   <p className="text-sm text-gray-500 dark:text-gray-400">
@@ -152,7 +150,7 @@ export default function OpportunityDetails({
           </div>
 
           {/* Skills */}
-          <div className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
 
             <h2 className="mb-6 text-2xl font-bold dark:text-white">
               Required Skills
@@ -171,7 +169,7 @@ export default function OpportunityDetails({
 
           </div>
                     {/* Description */}
-          <div className="rounded-3xl border border-gray-200 bg-white p-8 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+          <div className="rounded-3xl border border-gray-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
             <h2 className="mb-6 text-2xl font-bold dark:text-white">
               Job Description
             </h2>
