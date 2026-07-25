@@ -22,10 +22,10 @@ export default function OpportunitiesPage() {
     const [remoteOnly, setRemoteOnly] = useState(false);
 
     useEffect(() => {
-    const data = getOpportunities();
+        const data = getOpportunities();
 
-    setOpportunities(data);
-}, []);
+        setOpportunities(data);
+    }, []);
 
     const filteredOpportunities = useMemo(() => {
         return opportunities.filter((job) => {
@@ -63,14 +63,14 @@ export default function OpportunitiesPage() {
             );
         });
     }, [
-    opportunities,
-    search,
-    location,
-    category,
-    jobType,
-    experience,
-    remoteOnly,
-]);
+        opportunities,
+        search,
+        location,
+        category,
+        jobType,
+        experience,
+        remoteOnly,
+    ]);
 
     return (
         <main className="min-h-screen bg-gray-50 p-4 dark:bg-zinc-950 md:p-8">
