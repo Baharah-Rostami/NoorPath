@@ -1,11 +1,9 @@
+import { Mail, LocateIcon, MessageSquare } from "lucide-react";
 export default function ContactPage() {
   return (
     <main className="min-h-screen overflow-hidden bg-linear-to-b from-white via-emerald-50/40 to-white dark:from-zinc-950 dark:via-zinc-900 dark:to-zinc-950">
-
       {/* HERO */}
-
       <section className="relative px-6 py-28">
-
         {/* Background Effects */}
 
         <div className="absolute left-0 top-20 h-72 w-72 rounded-full bg-emerald-400/20 blur-3xl" />
@@ -43,46 +41,39 @@ export default function ContactPage() {
       {/* CONTACT SECTION */}
 
       <section className="mx-auto max-w-7xl px-6 pb-28">
-
         <div className="grid gap-10 lg:grid-cols-2">
-
-
-          {/* INFO CARDS */}
 
           <div className="space-y-6">
 
-
             {[
               {
-                icon: "📧",
+                icon: Mail,
                 title: "Email Us",
                 text: "support@noorpath.com",
               },
 
               {
-                icon: "📍",
+                icon: LocateIcon,
                 title: "Location",
                 text: "Afghanistan",
               },
 
               {
-                icon: "💬",
+                icon: MessageSquare,
                 title: "Support",
                 text: "Available for students and professionals",
               },
 
             ].map((item)=>(
-              
               <div
                 key={item.title}
                 className=" group rounded-4xl border border-white/30 bg-white/70 p-8 shadow-xl backdrop-blur-xl transition-all duration-500 hover:-translate-y-3 dark:border-zinc-800 dark:bg-zinc-900/70
                 ">
 
                 <div className="flex items-center gap-6">
-
                   <div className=" flex h-16 w-16 items-center justify-center rounded-3xl bg-linear-to-br from-emerald-500 to-teal-500 text-3xl shadow-lg transition group-hover:scale-110
                   ">
-                    {item.icon}
+                    <item.icon className="text-white" />
                   </div>
 
                   <div>
@@ -97,21 +88,16 @@ export default function ContactPage() {
                     </p>
 
                   </div>
-
                 </div>
-
               </div>
 
             ))}
-
           </div>
 
           {/* FORM */}
-
           <div
             className="rounded-[40px] border border-white/30bg-white/70 p-8 shadow-2xl backdrop-blur-xl dark:border-zinc-800 dark:bg-zinc-900/70
             ">
-
             <h2 className="text-3xl font-bold dark:text-white">
               Send A Message
             </h2>

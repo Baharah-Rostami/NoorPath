@@ -12,6 +12,10 @@ import {
   Globe,
   TrendingUp,
   ChevronDown,
+  Target,
+  Eye,
+  Zap,
+  HeartHandshake,
 } from "lucide-react";
 
 export default function AboutPage() {
@@ -121,7 +125,7 @@ export default function AboutPage() {
 
           <Link
             href="/contact"
-            className="rounded-2xl border border-gray-300 bg-white/60 px-8 py-4 font-semibold backdrop-blur-xl transition hover:bg-[#659287] hover:text-white dark:border-zinc-700 dark:bg-zinc-900/60 dark:hover:bg-zinc-900"
+            className="rounded-2xl border border-gray-300 bg-white/60 px-8 py-4 font-semibold backdrop-blur-xl transition hover:bg-[#659287] hover:text-white dark:border-zinc-700 dark:bg-zinc-900/60 dark:hover:bg-[#396057]"
           >
             Contact Us
           </Link>
@@ -198,13 +202,13 @@ export default function AboutPage() {
         </div>
       </section>
       {/* WHY NOORPATH */}
-      <section className="relative mx-auto max-w-7xl px-6 py-28">
+      <section className="relative mx-auto max-w-7xl px-5 py-16 md:px-6 md:py-24">
 
         {/* Decorative Background */}
 
         <div className="absolute -left-24 top-20 h-72 w-72 rounded-full bg-emerald-300/20 blur-[120px]" />
         <div className="absolute right-0 bottom-10 h-80 w-80 rounded-full bg-cyan-300/20 blur-[130px]" />
-        <div className="grid items-center gap-16 lg:grid-cols-2">
+        <div className="grid items-center gap-10 lg:gap-16 lg:grid-cols-2">
 
           {/* Left */}
 
@@ -262,46 +266,46 @@ export default function AboutPage() {
 
           {/* Right */}
 
-          <div className="grid gap-6">
+          <div className="grid gap-5 self-start">
 
             {[
               {
                 title: "Smart Discovery",
                 text: "Find opportunities tailored to your skills and interests.",
-                emoji: "🎯",
+                icon: Globe,
               },
               {
                 title: "Save & Track",
                 text: "Bookmark opportunities and never lose them.",
-                emoji: "💚",
+                icon: Bookmark,
               },
               {
                 title: "Career Growth",
                 text: "Build experience through internships and jobs.",
-                emoji: "🚀",
+                icon: TrendingUp,
               },
             ].map((card) => (
 
               <div
                 key={card.title}
-                className="group rounded-4xl border border-white/30 bg-white/60 p-8 shadow-xl backdrop-blur-2xl transition duration-500 hover:-translate-y-2 hover:scale-[1.02] hover:shadow-emerald-300/40 dark:border-zinc-800 dark:bg-zinc-900/60"
+                className="group rounded-2xl border border-white/30 bg-white/60 p-5 md:p-6 shadow-lg backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-emerald-300/30 dark:border-zinc-800 dark:bg-zinc-900/60"
               >
 
-                <div className="flex items-center gap-5">
+                <div className="flex flex-col items-center gap-4 text-center sm:flex-row sm:items-center sm:text-left">
 
-                  <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-emerald-500 to-teal-500 text-3xl shadow-lg transition duration-300 group-hover:rotate-6">
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-teal-500 text-white shadow-lg transition duration-300 group-hover:rotate-6 md:h-16 md:w-16">
 
-                    {card.emoji}
+                    <card.icon size={26} className="md:h-7 md:w-7" />
 
                   </div>
 
                   <div>
 
-                    <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
                       {card.title}
                     </h3>
 
-                    <p className="mt-2 leading-7 text-gray-600 dark:text-gray-400">
+                    <p className="mt-2 text-sm leading-6 md:text-base md:leading-7 text-gray-600 dark:text-gray-400">
                       {card.text}
                     </p>
 
@@ -316,15 +320,14 @@ export default function AboutPage() {
       </section>
 
       {/* MISSION & VISION */}
-      <section className="mx-auto max-w-7xl px-6 pb-28">
-
-        <div className="mb-16 text-center">
+      <section className="mx-auto max-w-7xl px-6 pb-16 md:pb-20">
+        <div className="mb-10 text-center">
 
           <span className="rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
             Our Purpose
           </span>
 
-          <h2 className="mt-6 text-5xl font-bold text-gray-900 dark:text-white">
+          <h2 className="mt-4 text-3xl font-bold text-gray-900 md:text-4xl dark:text-white">
             Driven By Purpose
           </h2>
 
@@ -340,16 +343,15 @@ export default function AboutPage() {
 
           {/* Mission */}
 
-          <div className="group relative overflow-hidden rounded-[36px] border border-white/30 bg-linear-to-br from-white/70 to-emerald-50/80 p-10 shadow-2xl backdrop-blur-2xl transition duration-500 hover:-translate-y-3 dark:border-zinc-800 dark:from-zinc-900 dark:to-zinc-900">
+          <div className="group relative overflow-hidden rounded-2xl border border-white/30 bg-linear-to-br from-white/70 to-emerald-50/80 p-6 shadow-2xl backdrop-blur-2xl transition duration-500 hover:-translate-y-3 dark:border-zinc-800 dark:from-zinc-900 dark:to-zinc-900">
             <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-emerald-300/20 blur-3xl" />
 
             <div className="relative">
-
-              <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-linear-to-br from-emerald-500 to-teal-500 text-4xl shadow-lg">
-                🎯
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#659287]/10 text-[#659287]">
+                <Target size={28} />
               </div>
 
-              <h3 className="mt-8 text-3xl font-bold dark:text-white">
+              <h3 className="mt-5 text-3xl font-bold dark:text-white">
                 Our Mission
               </h3>
 
@@ -367,16 +369,15 @@ export default function AboutPage() {
 
           {/* Vision */}
 
-          <div className="group relative overflow-hidden rounded-[36px] border border-white/30 bg-linear-to-br from-white/70 to-cyan-50/80 p-10 shadow-2xl backdrop-blur-2xl transition duration-500 hover:-translate-y-3 dark:border-zinc-800 dark:from-zinc-900 dark:to-zinc-900">
+          <div className="group relative overflow-hidden rounded-2xl border border-white/30 bg-linear-to-br from-white/70 to-emerald-50/80 p-6 shadow-2xl backdrop-blur-2xl transition duration-500 hover:-translate-y-3 dark:border-zinc-800 dark:from-zinc-900 dark:to-zinc-900">
             <div className="absolute -left-12 bottom-0 h-44 w-44 rounded-full bg-cyan-300/20 blur-3xl" />
 
             <div className="relative">
-
-              <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-linear-to-br from-cyan-500 to-teal-500 text-4xl shadow-lg">
-                🌍
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#659287]/10 text-[#659287]">
+                <Eye size={28} />
               </div>
 
-              <h3 className="mt-8 text-3xl font-bold dark:text-white">
+              <h3 className="mt-5 text-3xl font-bold dark:text-white">
                 Our Vision
               </h3>
 
@@ -521,48 +522,46 @@ export default function AboutPage() {
       </section>
 
       {/* WHY STUDENTS LOVE IT */}
-
-      <section className="mx-auto max-w-7xl px-6 py-28">
+      <section className="mx-auto max-w-7xl px-6 py-16 md:py-20">
         <div className="text-center">
 
           <span className="rounded-full bg-emerald-100 px-5 py-2 text-sm font-semibold text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400">
             Community
           </span>
 
-          <h2 className="mt-6 text-5xl font-bold dark:text-white">
+          <h2 className="mt-4 text-3xl font-bold md:text-4xl dark:text-white">
             Why Students Love NoorPath
           </h2>
 
         </div>
 
-        <div className="mt-16 grid gap-8 lg:grid-cols-3">
+        <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
 
           {[
             {
-              emoji: "🚀",
+              icon: Zap,
               title: "Fast & Modern",
               text: "Built with the latest technologies for a smooth experience.",
             },
             {
-              emoji: "💚",
+              icon: HeartHandshake,
               title: "Simple To Use",
               text: "Clean interface designed for students and professionals.",
             },
             {
-              emoji: "🎯",
-              title: "Focused On Careers",
+              icon: Target,
+              title: "Focuse On Jobs",
               text: "Everything is designed around helping users find opportunities.",
             },
           ].map((card) => (
 
             <div
               key={card.title}
-              className="group rounded-[36px] border border-white/30 bg-white/60 p-6 shadow-xl backdrop-blur-2xl transition-all duration-500 hover:-translate-y-4 hover:shadow-emerald-300/30 dark:border-zinc-800 dark:bg-zinc-900/60"
+              className="group rounded-2xl border border-white/30 bg-white/60 p-5 shadow-md backdrop-blur-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900/60"
             >
-              <div className="text-4xl transition duration-500 group-hover:scale-110">
-                {card.emoji}
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#659287]/10 text-[#659287] transition duration-300 group-hover:bg-[#659287] group-hover:text-white">
+                <card.icon size={24} />
               </div>
-
               <h3 className="mt-8 text-3xl font-bold dark:text-white">
                 {card.title}
               </h3>
@@ -577,7 +576,6 @@ export default function AboutPage() {
 
         </div>
       </section>
-
     </main>
   );
 }
