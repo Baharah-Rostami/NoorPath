@@ -19,8 +19,7 @@ export default function DashboardBanner() {
     <section className="relative overflow-hidden rounded-3xl">
 
       {/* Background */}
-      <div className="relative h-[260px] w-full">
-
+      <div className="relative min-h-[300px] md:h-64 w-full">
         <Image
           src="/images/office.jpg"
           alt="Office"
@@ -33,18 +32,18 @@ export default function DashboardBanner() {
 
         <div className="absolute inset-0 bg-linear-to-r from-emerald-900/70 via-emerald-800/35 to-transparent" />
 
-        <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-12">
-          <h1 className="max-w-2xl text-3xl font-bold text-white md:text-5xl">
+        <div className="absolute inset-0 flex flex-col justify-center px-6 py-8 md:px-12">
+          <h1 className="max-w-2xl text-2xl font-bold leading-tight text-white sm:text-3xl md:text-5xl">
             Good Morning, Baharah
           </h1>
 
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-gray-200 md:text-base">
+          <p className="mt-3 max-w-xl text-sm leading-6 text-gray-200 md:mt-4 md:text-base md:leading-7">
             Welcome back to NoorPath. Discover new opportunities,
             track your progress, and take the next step toward
             your career goals.
           </p>
 
-          <div className="mt-8 flex flex-wrap gap-6 text-sm text-white">
+          <div className="mt-6 flex flex-col gap-3 text-sm text-white sm:flex-row sm:flex-wrap sm:gap-6">
 
             <div className="flex items-center gap-2">
               <CalendarDays size={18} />
@@ -66,16 +65,16 @@ export default function DashboardBanner() {
         </div>
 
         {/* Avatar */}
-        <div className="absolute right-6 top-1/2 hidden -translate-y-1/2 md:block">
+        <div className="absolute bottom-5 right-5 md:right-6 md:top-1/2 md:bottom-auto md:-translate-y-1/2">
 
-          <div className="rounded-full border-4 border-white shadow-xl">
+          <div className="rounded-full border-4 border-[#659287] shadow-xl">
 
             <Image
               src="/images/avatar.jpg"
               alt="Profile"
-              width={130}
-              height={130}
-              className="rounded-full object-cover"
+              width={90}
+              height={90}
+              className="h-20 w-20 rounded-full object-cover md:h-[130px] md:w-[130px]"
             />
 
           </div>

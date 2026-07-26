@@ -2,6 +2,7 @@
 import { usePathname } from "next/navigation";
 import { Search, Menu } from "lucide-react";
 import ThemeToggle from "./ThemeToggle";
+import Image from "next/image";
 type TopbarProps = {
   setSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
@@ -21,8 +22,8 @@ export default function Topbar({
   const title = pageTitles[pathname] || "NoorPath";
 
   return (
-    <header className="h-20 bg-white border-b flex items-center justify-between px-6 text-[#6da48a] dark:bg-[#1A3636] dark:text-[#eae6e6]">
-  
+    <header className="flex h-20 items-center justify-between border-b border-gray-200 bg-white px-6 text-[#659287] dark:border-[#2d715a] dark:bg-[#2B5748] dark:text-white">
+
       <div className="flex items-center gap-4">
         <button
           onClick={() => setSidebarOpen(true)}
@@ -36,22 +37,30 @@ export default function Topbar({
         </h2>
       </div>
 
-      <div className="hidden md:flex items-center bg-gray-100 rounded-full px-4 py-2 w-[350px]">
+      <div className="hidden md:flex w-[350px] items-center rounded-full bg-gray-100 px-4 py-2 dark:bg-zinc-800">
         <Search size={18} className="text-gray-500" />
 
         <input
           type="text"
           placeholder="Search jobs..."
-          className="bg-transparent outline-none px-3 w-full dark:placeholder:text-[#414141]"
+          className="w-full bg-transparent px-3 outline-none dark:text-white dark:placeholder:text-zinc-400"
         />
       </div>
 
 
       <div className="flex items-center gap-5">
-       <ThemeToggle/>
-       
+        <ThemeToggle />
+
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-gray-300"></div>
+          <div className="h-10 w-10 overflow-hidden rounded-full border-2 border-[#659287] shadow-md">
+            <Image
+              src="/images/avatar.jpg"
+              alt="Bahar"
+              width={40}
+              height={40}
+              className="h-full w-full object-cover"
+            />
+          </div>
 
           <div className="hidden sm:block">
             <p className="font-medium">

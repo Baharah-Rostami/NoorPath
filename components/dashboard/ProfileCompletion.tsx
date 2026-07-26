@@ -161,7 +161,7 @@ export default function ProfileCompletion() {
         </p>
 
         <button
-          className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-emerald-600 px-4 py-3 font-semibold text-white transition hover:bg-emerald-700"
+          className="mt-5 flex w-full items-center justify-center gap-2 rounded-xl bg-[#659287] px-4 py-3 font-semibold text-white transition hover:bg-emerald-700"
         >
           Complete Profile
 

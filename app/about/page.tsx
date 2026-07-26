@@ -7,6 +7,7 @@ import {
   ArrowRight,
   Sparkles,
   BriefcaseBusiness,
+  ShieldCheck,
   Bookmark,
   Globe,
   TrendingUp,
@@ -85,7 +86,7 @@ export default function AboutPage() {
 
           <br />
 
-          <span className="bg-linear-to-r from-emerald-500 via-teal-500 to-cyan-500 bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-[#659287] via-teal-500 to-[#659287] bg-clip-text text-transparent">
             Starts With NoorPath
           </span>
 
@@ -106,7 +107,7 @@ export default function AboutPage() {
 
           <Link
             href="/opportunities"
-            className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-linear-to-r from-emerald-600 to-teal-600 px-8 py-4 font-semibold text-white shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-emerald-500/40"
+            className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-linear-to-r from-[#659287] to-teal-600 px-8 py-4 font-semibold text-white shadow-xl transition duration-300 hover:-translate-y-1 hover:shadow-emerald-500/40"
           >
 
             Explore Opportunities
@@ -120,7 +121,7 @@ export default function AboutPage() {
 
           <Link
             href="/contact"
-            className="rounded-2xl border border-gray-300 bg-white/60 px-8 py-4 font-semibold backdrop-blur-xl transition hover:bg-white dark:border-zinc-700 dark:bg-zinc-900/60 dark:hover:bg-zinc-900"
+            className="rounded-2xl border border-gray-300 bg-white/60 px-8 py-4 font-semibold backdrop-blur-xl transition hover:bg-[#659287] hover:text-white dark:border-zinc-700 dark:bg-zinc-900/60 dark:hover:bg-zinc-900"
           >
             Contact Us
           </Link>
@@ -163,7 +164,7 @@ export default function AboutPage() {
                 className="group rounded-[28px] border border-white/40 bg-white/60 p-8 backdrop-blur-2xl shadow-xl transition duration-500 hover:-translate-y-3 hover:shadow-2xl dark:border-zinc-800 dark:bg-zinc-900/60"
               >
 
-                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-emerald-500 to-teal-500 text-white transition group-hover:rotate-6">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-linear-to-br from-emerald-500 to-[#659287] text-white transition group-hover:rotate-6">
 
                   <Icon size={30} />
 
@@ -416,38 +417,35 @@ export default function AboutPage() {
 
           {[
             {
-              icon: "💼",
+              icon: ShieldCheck,
               title: "Verified Jobs",
-              text: "Browse trusted opportunities from companies and NGOs.",
+              text: "Browse trusted opportunities from trusted companies and organizations.",
             },
             {
-              icon: "⭐",
+              icon: Bookmark,
               title: "Save Favorites",
-              text: "Bookmark opportunities and apply whenever you're ready.",
+              text: "Bookmark opportunities and return to them anytime.",
             },
             {
-              icon: "🌍",
+              icon: Globe,
               title: "Remote Careers",
-              text: "Explore remote jobs from anywhere in Afghanistan.",
+              text: "Explore remote opportunities from anywhere.",
             },
             {
-              icon: "📈",
+              icon: TrendingUp,
               title: "Career Growth",
-              text: "Discover internships and full-time positions.",
+              text: "Find internships, graduate roles, and full-time careers.",
             },
           ].map((item) => (
 
             <div
               key={item.title}
-              className="group rounded-4xl border border-white/30 bg-white/60 p-8 backdrop-blur-2xl shadow-xl transition-all duration-500 hover:-translate-y-4 hover:rotate-1 hover:shadow-emerald-400/30 dark:border-zinc-800 dark:bg-zinc-900/60"
+              className="group rounded-2xl border border-gray-200 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900"
             >
-              <div className="flex h-20 w-20 items-center justify-center rounded-3xl bg-linear-to-br from-emerald-500 to-teal-500 text-4xl shadow-lg transition duration-500 group-hover:scale-110">
-
-                {item.icon}
-
+              <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-[#659287]/10 text-[#659287] transition duration-300 group-hover:bg-[#659287] group-hover:text-white">
+                <item.icon size={28} strokeWidth={2.2} />
               </div>
-
-              <h3 className="mt-8 text-2xl font-bold dark:text-white">
+              <h3 className="mt-6 text-xl font-bold dark:text-white">
                 {item.title}
               </h3>
 
@@ -464,14 +462,14 @@ export default function AboutPage() {
 
       {/* LIVE PLATFORM STATS */}
 
-      <section className="relative py-28">
-        <div className="absolute inset-0 bg-linear-to-r from-emerald-600 via-teal-600 to-cyan-600" />
+      <section className="relative py-16 md:py-20">
+        <div className="absolute inset-0 bg-linear-to-r from-[#659287] via-[#5A8379] to-[#4D7268]" />
         <div className="absolute inset-0 bg-black/10" />
         <div className="relative mx-auto max-w-7xl px-6">
 
           <div className="text-center">
 
-            <h2 className="text-5xl font-bold text-white">
+            <h2 className="text-3xl font-bold text-white md:text-4xl">
               NoorPath In Numbers
             </h2>
 
@@ -480,7 +478,7 @@ export default function AboutPage() {
             </p>
 
           </div>
-          <div className="mt-16 grid gap-8 sm:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 
             {[
               {
@@ -503,14 +501,14 @@ export default function AboutPage() {
 
               <div
                 key={item.title}
-                className="rounded-4xl border border-white/20 bg-white/10 p-10 text-center backdrop-blur-2xl transition duration-500 hover:-translate-y-3 hover:bg-white/20"
+                className="rounded-2xl bg-white/10 p-6 text-center backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:bg-white/15"
               >
 
-                <h2 className="text-6xl font-extrabold text-white">
+                <h2 className="text-4xl font-bold text-white md:text-5xl">
                   {item.number}
                 </h2>
 
-                <p className="mt-5 text-lg text-emerald-100">
+                <p className="mt-2 text-sm font-medium text-emerald-100">
                   {item.title}
                 </p>
 

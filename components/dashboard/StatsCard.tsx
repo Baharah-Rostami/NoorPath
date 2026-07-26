@@ -90,68 +90,44 @@ export default function StatsCards() {
               "
             >
 
-              <div className=" flex items-center justify-between
-              ">
+              <div className=" flex items-center justify-between">
 
                 <div>
 
-                  <p className="
-                  text-sm
-                  text-gray-500
-                  dark:text-gray-400
+                  <p className="text-sm text-gray-500 dark:text-gray-400
                   ">
                     {stat.title}
                   </p>
 
 
-                  <h2 className="
-                  text-3xl
-                  font-bold
-                  mt-2
-                  text-gray-900
-                  dark:text-white
+                  <h2 className="text-3xl font-bold mt-2 text-gray-900 dark:text-white
                   ">
                     {stat.value}
                   </h2>
 
 
-                  <p className="
-                  text-xs
-                  text-green-500
-                  mt-2
+                  <p className="text-xs text-[#43786c] mt-2
                   ">
                     {stat.subtitle}
                   </p>
 
                 </div>
 
-
-
-                <div className="
-                p-3
-                rounded-xl
-                bg-green-100
-                dark:bg-green-900/30
+                <div className="p-3 rounded-xlbg-green-100 dark:bg-green-900/30
                 ">
 
                   <Icon
                     size={24}
-                    className="
-                    text-green-700
-                    dark:text-green-500
-                    "
-                  />
+                    className="text-green-700 dark:text-[#659287]
+                    "/>
 
                 </div>
-
               </div>
-
             </div>
           );
 
         })
       }
-
 
     </section>
   );

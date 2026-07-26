@@ -37,7 +37,7 @@ export default function RecentOpportunities() {
 
         <Link
           href="/opportunities"
-          className="flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-700"
+          className="flex items-center gap-2 rounded-xl bg-[#659287] px-4 py-2 text-sm font-semibold text-white transition hover:bg-emerald-700"
         >
           View All
           <ArrowRight size={16} />
@@ -72,7 +72,7 @@ export default function RecentOpportunities() {
 
           <div
             key={job.id}
-            className="group flex flex-col gap-4 rounded-2xl border border-gray-200 p-5 transition hover:border-emerald-500 hover:shadow-md dark:border-zinc-800 md:flex-row md:items-center md:justify-between"
+            className="group flex flex-col gap-4 rounded-2xl border border-gray-200 p-5 transition hover:border-[#659287] hover:shadow-md dark:border-zinc-800 md:flex-row md:items-center md:justify-between"
           >
 
             {/* Left */}
@@ -128,7 +128,7 @@ export default function RecentOpportunities() {
 
               <Link
                 href={`/opportunities/${job.id}`}
-                className="flex items-center gap-2 rounded-xl border border-emerald-600 px-4 py-2 text-sm font-semibold text-emerald-600 transition hover:bg-emerald-600 hover:text-white"
+                className="flex items-center gap-2 rounded-xl border border-[#659287] px-4 py-2 text-sm font-semibold text-emerald-600 transition hover:bg-[#659287] hover:text-white"
               >
                 View
                 <ArrowRight size={15} />
