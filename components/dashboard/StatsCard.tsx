@@ -113,7 +113,7 @@ export default function StatsCards() {
 
                 </div>
 
-                <div className="p-3 rounded-xlbg-green-100 dark:bg-green-900/30
+                <div className="p-3 rounded-xl bg-green-100 dark:bg-green-900/30
                 ">
 
                   <Icon
