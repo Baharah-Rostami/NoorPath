@@ -162,7 +162,8 @@ NoorPath/
 │   ├── dashboard/
 │   ├── opportunity/
 │   ├── layout/
-│   └── forms/
+│   ├── forms/
+│   ├── providers/
 │
 ├── hooks/
 │
@@ -171,7 +172,7 @@ NoorPath/
 │   ├── opportunitiesStorage.ts
 │   └── savedOpportunities.ts
 │
-├── types/
+├── data/
 │
 └── public/
 ```
@@ -183,7 +184,7 @@ NoorPath/
 Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/noorpath.git
+git clone https://github.com/Baharah-Rostami/NoorPath.git
 ```
 
 Navigate into the project
@@ -208,28 +209,6 @@ Open
 
 ```text
 http://localhost:3000
-```
-
----
-
-# 📸 Screenshots
-
-You can add screenshots here.
-
-Example:
-
-```text
-/public/screenshots
-
-dashboard.png
-
-opportunities.png
-
-details.png
-
-saved.png
-
-dark-mode.png
 ```
 
 ---
